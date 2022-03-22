@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Genty Sans';
+    src: url('GentySans-Regular.eot');
+    src: url('GentySans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('GentySans-Regular.woff2') format('woff2'),
+        url('GentySans-Regular.woff') format('woff'),
+        url('GentySans-Regular.ttf') format('truetype'),
+        url('GentySans-Regular.svg#GentySans-Regular') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Genty';
+    src: url('Genty-Regular.eot');
+    src: url('Genty-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Genty-Regular.woff2') format('woff2'),
+        url('Genty-Regular.woff') format('woff'),
+        url('Genty-Regular.ttf') format('truetype'),
+        url('Genty-Regular.svg#Genty-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

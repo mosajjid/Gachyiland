@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, minimum-scale=1">
+  <title>Gachyi Land</title>
+  <link rel="icon" href="./images/favicon.ico">
+  <!-- css Link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/owl.carousel.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./sass/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+</head>
+
+<body class="contact_us_body">
+  <div id="snackbar"></div>
+  <button type="button" class="btn btn-link p-0 fixedrightBottom d-none"><img src="./images/capsulenow.svg" class="w-100"
+      alt=""></button>
+
+
+      <!-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid d-flex justify-content-between">
+          <a class="navbar-brand" href="index.html"><img src="./images/logo.png" alt="" /></a>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="#about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html#team">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/launchpad.html">NFT Launchpad</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact-us.html#faq">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact-us.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <button class="btn btn-primary d-none d-md-inline-block" id="connectWallet" type="button" onclick="web3Connection()">Connect</button>
+            <button class="btn btn-link d-inline-block d-md-none p-0" id="connectWalletMob"  onclick="web3Connection()" type="submit"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="30" height="30" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(3 4)"><path d="M.5 2.5h12a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2zm1-2h9a1 1 0 0 1 1 1v1H.5v-1a1 1 0 0 1 1-1z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11.5" cy="7.5" fill="white" r="1"/></g></svg></button>
+          </div>
+        </div>
+      </nav> -->
+
+
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid d-flex justify-content-between">
+          <!-- Button trigger modal -->
+          <button type="button" class="hamburger__menu" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img src="./images/hamburger.png" class="img-fluid" alt="">
+          </button>
+          <a class="navbar-brand" href="/index.html"><img src="./images/logo.png" alt="" /></a>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="/index.html#about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html#team">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/launchpad.html">NFT Launchpad</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2 px-1" href="/buy.html">Buy NFT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#faq">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact-us.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <button class="btn btn-primary d-none d-md-inline-block" id="connectWallet" type="button">Connect</button>
+            <button class="btn btn-link d-inline-block d-md-none p-0" id="connectWalletMob"  type="button">
+              <img src="./images/wallet.png" class="img-fluid" height="60px" width="60px" alt="">
+            </button>
+    
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <img src="./images/logo.png" class="img-fluid" alt="">
+                  </div>
+                  <div class="modal-body">
+                    <ul class="navbar-nav">
+                      <li class="nav-item-modal">
+                        <a class="nav-link active" href="/index.html#about">About Us</a>
+                      </li>
+                      <img src="./images/line-seperator.png" class="img-fluid" alt="">
+                      <li class="nav-item-modal">
+                        <a class="nav-link-modal" href="#team">Team</a>
+                      </li>
+                      <img src="./images/line-seperator.png" class="img-fluid" alt="">
+                      <li class="nav-item-modal">
+                        <a class="nav-link-modal" href="/launchpad.html">NFT Launchpad</a>
+                      </li>
+                      <img src="./images/line-seperator.png" class="img-fluid" alt="">
+                      <!-- <li class="nav-item-modal">
+                        <a class="nav-link-modal mx-2 px-1" href="/buy.html">Buy NFT</a>
+                      </li> -->
+                      <li class="nav-item-modal">
+                        <a class="nav-link-modal" href="/contact-us.html#faq">FAQ</a>
+                      </li>
+                      <img src="./images/line-seperator.png" class="img-fluid" alt="">
+                      <li class="nav-item-modal">
+                        <a class="nav-link-modal" href="/contact-us.html">Contact Us</a>
+                      </li>
+                      <img src="./images/line-seperator.png" class="img-fluid" alt="">
+                    </ul>
+                  </div>
+                  <button type="button" class="btn-modal-close" data-bs-dismiss="modal" aria-label="Close">
+                    <img src="./images/Modal-close.png" class="img-fluid" alt="">
+                  </button>
+                  <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div> -->
+    
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+  <section id="contact_us" class="contact_us">
+    <div class="container-fluid">
+        <div class="title fs64 text-white text-uppercase text-center wt"><span class="px-4">Contact Us</span></div>
+    </div>
+
+    <div class="container-fluid contact_us_form">
+      <div class="col">
+        <form action="#" id="contact__us__now">
+          <div class="loading"><h3>Loading...</h3></div>
+          <div class="row mb-4 mb-md-5">
+            <div class="col-md-6">
+              <p>First Name</p>
+              <input type="text" class="form-control" placeholder="Enter first name" name="form_fname" id="form_fname" required>
+            </div>
+            <div class="col-md-6">
+              <p>Last Name</p>
+              <input type="text" class="form-control" placeholder="Enter last name" name="form_lname" id="form_lname" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <p>Email Address</p>
+              <input type="email" class="placeholder" placeholder="Enter email address" name="form_email" id="form_email" required>
+            </div>
+            <div class="col-md-6">
+              <p>Issues</p>
+              <select class="form-control select-2" name="form_issues" id="form_issues">
+                <option value="General enquires">General enquires</option>
+                <option value="Payment Issues">Payment Issues</option>
+                <option value="Expression of interest">Expression of interest</option>
+                <option value="Other issues">Other issues</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row mt-3 mt-md-5">
+            <div class="col">
+                
+                    <p>Message</p>
+                    <textarea name="" placeholder="Write your message" cols="30" rows="20" name="form_message"  id="form_message"></textarea>
+                
+                <p class="last_para_text">
+                    Please enter the details of your request. A member of our support staff will respond as soon as possible.
+                </p>
+            </div>
+        </div>
+
+        <div class="row mt-3 mt-md-5">
+            <div class="col">
+                    <button class="submit_button mt-2 mt-md-4" type="submit">Submit</button>
+            </div>
+        </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq_section mt-5">
+      <div class="container-fluid">
+        <div class="title fs64 text-white text-uppercase text-center wt"><span class="px-4">FAQ</span></div>
+      </div>
+      <div class="faq__sec__wrapper">
+        <div class="container-fluid">
+          <div class="faq_section_sec">
+            <p class="mt-3 mt-md-5 pb-2">About Gachyi Land</p>
+    
+            <div class="accordion" id="accordionExample">
+    
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                       1. What is Gachyi Land?
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <p>Gachyi Land is an NFT Gacha-Launchpad. Every NFT launched on Gachyi Land’s Launchpad can either be built into its mini party games or Play2Earn MMORPG NFT game.</p>
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        2. What is the meaning of the name, Gachyi Land?
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>The name, Gachyi Land, comes from a few elements:</p>
+                      <ul class="mt-3 mb-3">
+                        <li class="mb-3">Element 1: Gachyi is a twist of the term Gachapon, which is the theme of our launchpad where all NFTs are minted via unique Gachapon machines.</li>
+                        <li>Element 2: Chyi is the second first name of one of our founders.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        3. What makes Gachyi Land special? 
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p class="mb-3">Gachyi Land breathes by the rule where all NFTs serve a purpose throughout our ecosystem. </p>
+                        <p class="mb-3">Gachyi Land’s own NFTs will either be built in its NFT games as playable characters or have in-game functionality such as boosts, extra drops or exclusive pre-sale access.</p>
+                        <p class="mb-3">Other projects’ NFTs issued via the Gacha-Launchpad will also have some form of utility within the ecosystem depending on the commercial terms. </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          
+          <div class="faq_section_sec">
+            <p class="mt-3 mt-md-5 mb-2">About NFT</p>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="s-2-1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sec-2-1" aria-expanded="false" aria-controls="sec-2-1">
+                        1. When is the first NFT release?
+                    </button>
+                  </h2>
+                  <div id="sec-2-1" class="accordion-collapse collapse " aria-labelledby="s-2-1" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p class="mb-3">Our first NFT release is called ‘Goo Goo’. They are limited to 500 ever to be minted.</p>
+                        <p class="mb-3">The pre-sale date is set on 29 November 2021. </p>
+                        <p class="mb-3">Public sale will occur after pre-sale on 2 December 2021. </p>
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="s-2-2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sec-2-2" aria-expanded="false" aria-controls="sec-2-2">
+                        2. How can I get into pre-sale?
+                    </button>
+                  </h2>
+                  <div id="sec-2-2" class="accordion-collapse collapse" aria-labelledby="s-2-2" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p class="mb-3">We are currently running several contests across our socials that reward winners with pre-sale spots.</p>
+                        <p class="mb-3">Alternatively, you may visit our Discord server #ticket-exchange channel to buy pre-sale spots from other members. </p>
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="s-2-3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sec-2-3" aria-expanded="false" aria-controls="sec-2-3">
+                        3. What chain will the NFTs be minted?
+                    </button>
+                  </h2>
+                  <div id="sec-2-3" class="accordion-collapse collapse" aria-labelledby="s-2-3" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <p class="mb-2">Polygon. All Gachyi Land’s NFTs will be minted via this official website. </p>
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="s-2-4">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sec-2-4" aria-expanded="false" aria-controls="sec-2-4">
+                        4. What is the utility for Goo Goo NFT?
+                      </button>
+                    </h2>
+                    <div id="sec-2-4" class="accordion-collapse collapse" aria-labelledby="s-2-4" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <h3 class="goo_goo_h3">GooGoo will provide following:</h3>
+                        <ul>
+                          <li>&#8226; Act as a status symbol in the Gachyi Land Universe.</li>
+                          <li>&#8226; Access to all presales in the Gachyi Land Universe.</li>
+                          <li>&#8226; Access to free minting events.</li>
+                          <li>&#8226; Different GooGoo traits will be entitled to different rewards.</li>
+                          <li>&#8226; Commercialization rights.</li>
+                          <li>&#8226; 1.5x drop rate in our RPG.</li>
+                          <li>&#8226; 1.25x social experience gain in our RPG.</li>
+                          <li>&#8226; You'll receive an ZuZu mount ( cloud the GooGoos are on ) that will allow you to explore Gachyi Land faster.</li>
+                          <li>&#8226; Owners will receive 1 exclusive in game skin.</li>
+                          <li>&#8226; Owners can dispatch Goo Goos on an expending for a fixed period to gather Polymer for slime splicing.</li>
+
+                          <!-- <li class="mt-4">individuals will need to have MATIC in wallet in order to mint.</li>
+                          <li>We are looking to implement a payment gateway that allows individuals to buy NFTs via credit card instead of crypto.</li> -->
+                          
+                        </ul>
+                      </div>
+                    </div>
+                </div>
+    
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="s-2-5">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sec-2-5" aria-expanded="false" aria-controls="sec-2-5">
+                        5. Can I buy Gachyi Land’s NFTs with credit card?
+                      </button>
+                    </h2>
+                    <div id="sec-2-5" class="accordion-collapse collapse" aria-labelledby="s-2-5" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p class="mb-3">
+                          Our NFTs are currently priced in MATIC, which means that individuals will need to have MATIC in wallet in order to mint. 
+                        </p>  
+                        <p class="mb-3">We are looking to implement a payment gateway that allows individuals to buy NFTs via credit card instead of crypto.</p>
+                      </div>
+                    </div>
+                </div>
+                    
+              </div>
+          </div>
+
+          <div class="faq_section_sec">
+            <p class="for_artist_para mt-3 mt-md-5 mb-2">About Play2Earn MMORPG NFT Game</p>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="s-2-1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sec-3-1" aria-expanded="true" aria-controls="sec-3-1">
+                        1. When will the MMORPG NFT game be released?
+                    </button>
+                  </h2>
+                  <div id="sec-3-1" class="accordion-collapse collapse" aria-labelledby="s-2-1" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p class="mb-2">The game will be released after the issuance of all of our Gachyi Land’s core NFT series, which we estimate around 2023.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="s-2-2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sec-3-2" aria-expanded="false" aria-controls="sec-3-2">
+                        2. Will the MMORPG NFT game be playable on IOS/Android? 
+                    </button>
+                  </h2>
+                  <div id="sec-3-2" class="accordion-collapse collapse" aria-labelledby="s-2-2" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p class="mb-2">Yes, we will endeavour to implement cross platform compatibility.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="s-2-3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sec-3-3" aria-expanded="false" aria-controls="sec-3-3">
+                        3. How does owning a Goo Goo benefit the player?
+                    </button>
+                  </h2>
+                  <div id="sec-3-3" class="accordion-collapse collapse" aria-labelledby="s-2-3" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p class="mb-2">Goo Goo holders will be gifted with: </p>
+                        <ul>
+                          <li>&#8226; Act as a status symbol in the Gachyi Land Universe.</li>
+                          <li>&#8226; Access to all presales in the Gachyi Land Universe.</li>
+                          <li>&#8226; Access to free minting events.</li>
+                          <li>&#8226; Different GooGoo traits will be entitled to different rewards.</li>
+                          <li>&#8226; Commercialization rights.</li>
+                          <li>&#8226; 1.5x drop rate in our RPG.</li>
+                          <li>&#8226; 1.25x social experience gain in our RPG.</li>
+                          <li>&#8226; You'll receive an ZuZu mount ( cloud the GooGoos are on ) that will allow you to explore Gachyi Land faster.</li>
+                          <li>&#8226; Owners will receive 1 exclusive in game skin.</li>
+                          <li>&#8226; Owners can dispatch Goo Goos on an expending for a fixed period to gather Polymer for slime splicing.</li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="s-2-4">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sec-3-4" aria-expanded="false" aria-controls="sec-3-4">
+                        4. Are Goo Goos the playable characters in the RPG?
+                      </button>
+                    </h2>
+                    <div id="sec-3-4" class="accordion-collapse collapse" aria-labelledby="s-2-4" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p class="mb-3">No. The playable characters in the RPG belong to the second NFT series called ‘Slime Tales’. There are altogether 5 classes: Mage, Priest, Warrior, Thief, Lord.</p>
+                        <p class="mb-3">Goo Goos will act as NPC guides in the game to give players hints and direction.</p>
+                        <p class="mb-3">Goo Goo holders will gain significant advantage in the game as compared to non-Goo Goo holders.</p>
+                        <p class="mb-3">Read our whitepaper to find out more detailed information about the gameplay.</p>
+                      </div>
+                    </div>
+                </div>
+                    
+              </div>
+          </div>
+
+          <div class="faq_section_sec">
+      
+              <div class="title fs64 text-white text-uppercase text-center wt"><span class="px-4">For Artist</span></div>
+      
+              <p class="for_artist_para mt-3 mt-md-5 mb-2">About Gacha-Lauchpad</p>
+              <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="s-2-1">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sec-4-1" aria-expanded="true" aria-controls="sec-4-1">
+                          1.	How does the Gacha-Launchpad work? 
+                      </button>
+                    </h2>
+                    <div id="sec-4-1" class="accordion-collapse collapse" aria-labelledby="s-2-1" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <p class="mb-3">NFTs that fit within Gachyi Land’s lore and theme can be issued on our Gacha-Launchpad. </p>
+                        <p class="mb-3">Each NFT series will need a uniquely designed Gachapon machine for minting. </p>
+                        <p class="mb-3">If you are interested, contact us to discuss further.</p>
+                      </div>
+                    </div>
+                  </div>
+                      
+              </div>
+          </div>
+        </div><!-- container fluid-->
+
+      </div>
+  </section>
+
+  <footer>
+    <div class="container-fluid">
+      <div class="row align-items-center pb-3 pb-xl-5">
+        <div class="col-md-3">
+          <a class="navbar-brand" href="#home"><img src="./images/logo.png" alt="" /></a>
+        </div>
+        <div class="col-md-6">
+          <ul class="navbar-nav justify-content-center flex-wrap flex-row">
+            <li class="nav-item">
+              <a class="nav-link active" href="#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="launchpad.html">NFT Launchpad</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact-us.html/#faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact-us.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <div class="social d-flex align-items-center justify-content-center justify-content-md-end">
+            <a href="https://twitter.com/GachyiLand" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span class="iconify" data-icon="akar-icons:twitter-fill" style="color: #9b84fc;"></span>
+            </a>
+            <a href="https://www.instagram.com/gachyi.land/" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span class="iconify" data-icon="akar-icons:instagram-fill" style="color: #9b84fc;"></span>
+            </a>
+            <a href="https://www.facebook.com/Gachyi-Land-275279670982071" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span style="color: #9b84fc;" class="iconify" data-icon="brandico:facebook"></span>
+            </a>
+            <a href="https://discord.gg/pPWAC888kC" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span class="iconify" data-icon="fa-brands:discord" style="color: #9b84fc;"></span>
+            </a>
+            <a href="https://t.me/GachyiLand" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span class="iconify" data-icon="cib:telegram-plane" style="color: #9b84fc;"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-md-5">
+          <div class="text-white fs24 mb-3">Copyright &copy; Gachyi Land.</div>
+          <a class="footer-link" target="_blank" href="http://www.polygon.technology">Powered by Polygon</a>
+        </div>
+        <div class="col-md-7">
+          <div class="footerLink">
+            <a href="#">Terms and Condition</a>
+            <a href="#">Privacy Policy</a>
+            <select class="language">
+              <option>English</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Js Link -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/owl.carousel.min.js"></script>
+  <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.1.4/ethers.umd.min.js"></script>			
+  <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+  <script src="js/connection.js"></script>
+  <script type="text/javascript">
+    toastr.options = {
+      "closeButton": false,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": false,
+      "positionClass": "toast-top-right",
+      "preventDuplicates": false,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+  </script>
+  <script src="js/buy.js"></script>
+
+</body>
+
+</html>

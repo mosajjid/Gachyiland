@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, minimum-scale=1">
+  <title>Gachyi Land</title>
+  <link rel="icon" href="./images/favicon.ico">
+  <!-- css Link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/owl.carousel.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./sass/main.css">
+  <link rel="stylesheet" href="css/select2.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+</head>
+
+<body>
+  <section class="floating-button">
+    <button onclick="musik()" class="audio off"><img src="./images/Audio-new-button.png" class="img-fluid" alt=""></button>
+  </section>
+  <div id="snackbar"></div>
+    <audio controls autoplay loop>
+      <!-- <source src="./audio/Home-Page-Track-new-MP3.mp3" type="audio/ogg"> -->
+      <!-- <source src="./audio/Home-Page-Track-new-MP3.mp3" type="audio/mpeg"> -->
+    </audio>
+  <button type="button" class="btn btn-link p-0 fixedrightBottom d-none"><img src="./images/capsulenow.svg" class="w-100"
+      alt=""></button>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid d-flex justify-content-between">
+      <!-- Button trigger modal -->
+      <button type="button" class="hamburger__menu" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <img src="./images/hamburger.png" class="img-fluid" alt="">
+      </button>
+      <a class="navbar-brand" href="/index.html"><img src="./images/logo.png" alt="" /></a>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#team">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/launchpad.html">NFT Launchpad</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2 px-1" href="/buy.html">Buy NFT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact-us.html#faq">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact-us.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <button class="btn btn-primary d-none d-md-inline-block" id="connectWallet" type="button">Connect</button>
+        <button class="btn btn-link d-inline-block d-md-none p-0" id="connectWalletMob"  type="button">
+          <img src="./images/wallet.png" class="img-fluid" height="60px" width="60px" alt="">
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <img src="./images/logo.png" class="img-fluid" alt="">
+              </div>
+              <div class="modal-body">
+                <ul class="navbar-nav">
+                  <li class="nav-item-modal">
+                    <a class="nav-link-modal active" href="#about">About Us</a>
+                  </li>
+                  <img src="./images/line-seperator.png" class="img-fluid" alt="">
+                  <li class="nav-item-modal">
+                    <a class="nav-link-modal" href="#team">Team</a>
+                  </li>
+                  <img src="./images/line-seperator.png" class="img-fluid" alt="">
+                  <li class="nav-item-modal">
+                    <a class="nav-link-modal" href="/launchpad.html">NFT Launchpad</a>
+                  </li>
+                  <img src="./images/line-seperator.png" class="img-fluid" alt="">
+                  <!-- <li class="nav-item-modal">
+                    <a class="nav-link-modal mx-2 px-1" href="/buy.html">Buy NFT</a>
+                  </li> -->
+                  <li class="nav-item-modal">
+                    <a class="nav-link-modal" href="/contact-us.html#faq">FAQ</a>
+                  </li>
+                  <img src="./images/line-seperator.png" class="img-fluid" alt="">
+                  <li class="nav-item-modal">
+                    <a class="nav-link-modal" href="/contact-us.html">Contact Us</a>
+                  </li>
+                  <img src="./images/line-seperator.png" class="img-fluid" alt="">
+                </ul>
+              </div>
+              <button type="button" class="btn-modal-close" data-bs-dismiss="modal" aria-label="Close">
+                <img src="./images/Modal-close.png" class="img-fluid" alt="">
+              </button>
+              <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <section class="hero_Sec" id="home">
+    <div class="countdown d-none">
+      <img src="./images/capsule.svg" alt="" />
+      <div class="countdownInner">
+        <div class="fs18  text-white text-center pb-2">Next Capsule Drop in</div>
+        <div class="d-flex">
+          <div id="timer">
+            <span>0</span>
+            <span>0</span>
+            :
+            <span>0</span>
+            <span>0</span>
+            :
+            <span>0</span>
+            <span>0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="px-3">
+      <div class="fs64 fw-700 text-shadow text-white">WELCOME TO</div>
+      <div class="fs160 text-nowrap  text-shadow text-white pt-3 pt-md-4 logo">
+        <img src="./images/logo.png"/>
+      </div>
+      <ul class="mt-md-5 mt-4 hero__btns d-flex flex-column flex-md-row align-items-center justify-content-center">
+        <li>
+          <a href="https://docsend.com/view/zmitfz49fyhtgamr" class="gl-primary-btn" target="_blank">
+            <img src="/images/read-w-btn.png" class="" /> 
+          </a>
+        </li>
+        <li>
+          <a href="/contact-us.html" class="gl-primary-btn">
+            <img src="/images/work-w-btn.png" class="" /> 
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="capsules_sec wtg" id="about">
+    <div class="container-fluid">
+      <div class="title fs64 text-white text-uppercase text-center wt"><span class="px-4">What is Gachyi Land?</span></div>
+      <div class="fs24 text-white text-center py-3 mt-4 mt-md-5">
+        <p>We are building an ecosystem where NFTs issued on our platform can be incorporated into our future mini party games and Play-To-Earn MMORPG.</p>
+        <p>We will be releasing our very own NFTs as well as onboarding NFTs from other projects. These NFTs will be minted via our interactive gachapon machines on our website. Our first release is the Goo Goos collection, limited to 500 ever to be minted on Polygon. Owning a Goo Goo gives you privileges throughout our roadmap.</p>
+        <p>Follow our social channels to make sure you do not miss any rewarding events!</p>
+      </div>
+    </div>
+  </section>
+  <section class="capsules_sec full-purple">
+    <div class="container-fluid">
+      <div class="title fs64 text-white text-uppercase text-center"><span class="px-4">Launchpad</span></div>
+      <div class="owl-carousel owl-theme capsulesSlider">
+        <div class="item">
+          <a href="https://opensea.io/collection/goo-goos" target="_blank"><img src="./images/Intro-Goo-high.gif" class="img-fluid mx-auto w-100" alt="" /></a>
+        </div>
+        <div class="item">
+          <img src="./images/Banner-googoos.png" class="img-fluid mx-auto w-100" alt="" />
+        </div>
+        <div class="item">
+          <img src="./images/Banner-googoos.png" class="img-fluid mx-auto w-100" alt="" />
+        </div>
+      </div>
+
+      <!-- <button class="buy-btn"><img src="./images/Indexpage-buynow-btn.png" class="img-fluid" alt=""></button> -->
+      <div class="d-flex align-content-center justify-content-center mt-4">
+        <a href="https://opensea.io/collection/goo-goos" target="_blank" class="buy-btn"><img src="./images/Indexpage-buynow-btn.png" class="img-fluid" alt=""></a>
+      </div>
+    </div>
+  </section>
+  <section class="how_sec">
+    <div class="container-fluid">
+      <div class="title fs64 text-white  text-center text-nowrap"><span class="px-4">HOW IT WORKS</span></div>
+      <div class="owl-carousel owl-theme roadMapSlider mt-4  mt-md-5">
+        <div class="item">
+          <div class="stepItem text-center">
+            <div class="stepIcon">
+              <h2>01</h2>
+            </div>
+            <div class="stepBody">
+              <h5>Step 1 – Connect wallet and have your funds ready</h5>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="stepItem text-center">
+            <div class="stepIcon">
+              <h2>02</h2>
+            </div>
+            <div class="stepBody">
+              <h5>Step 2 – Explore the NFT collections and pick your favourite</h5>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="stepItem text-center">
+            <div class="stepIcon">
+              <h2>03</h2>
+            </div>
+            <div class="stepBody">
+              <h5>Step 3 – Insert coins and open your capsule</h5>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="item">
+          <div class="stepItem text-center">
+            <div class="stepIcon">
+              <h2>04</h2>
+            </div>
+            <div class="stepBody">
+              <h5><strong>Step 3</strong> – insert coins and open your gacha!</h5>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+  <section class="roadMap_sec">
+    <div class="container-fluid">
+      <div class="title fs64 text-white  text-center text-nowrap"><span class="px-4">ROAD MAP</span></div>
+      <div class="owl-carousel owl-theme roadMapSlider">
+        <div class="item">
+          <div class="roadmapBox"><img src="./images/Roadmap1.png" alt="" /></div>
+          <div class="roadmapName">Goo Goo NFT</div>
+        </div>
+        <div class="item">
+          <div class="roadmapBox"><img src="./images/Roadmap2.png" alt="" /></div>
+          <div class="roadmapName">NFT Launchpad</div>
+        </div>
+        <div class="item">
+          <div class="roadmapBox"><img src="./images/Roadmap3.png" alt="" /></div>
+          <div class="roadmapName">Slime Tales NFT</div>
+        </div>
+        <div class="item">
+          <div class="roadmapBox"><img src="./images/capsules-bg.png" alt="" /></div>
+          <div class="roadmapName">Weapons Release</div>
+        </div>
+        <div class="item">
+          <div class="roadmapBox"><img src="./images/capsules-bg.png" alt="" /></div>
+          <div class="roadmapName">Mini Party Game</div>
+        </div>
+        <div class="item">
+          <div class="roadmapBox"><img src="./images/capsules-bg.png" alt="" /></div>
+          <div class="roadmapName">Land Sale</div>
+        </div>
+        <div class="item">
+          <div class="roadmapBox"><img src="./images/capsules-bg.png" alt="" /></div>
+          <div class="roadmapName">Play2Earn MMORPG</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="team_sec" id="team">
+    <div class="container-fluid">
+      <div class="title fs64 text-white  text-center text-nowrap"><span class="px-4 txt-shadow">TEAM</span></div>
+      <div class="row mt-md-5 mt-4 mt-mb-4 mb-2">
+        <div class="col text-center">
+          <h3 class="team-type-title">Founders</h3>
+        </div>
+      </div>
+      <div class="row justify-content-center py-3 py-md-5">
+        <div class="col-md-4 mb-5 mb-md-0">
+          <a href="#" class="founder__link" data-target="may">
+            <div class="teamBox text-center mx-auto position-relative text-center">
+              <img src="./images/5.png" alt="" />
+              <div class="fs30  mt-4 team-member-title">May</div>
+              <div class="linked">
+                <a href="https://www.linkedin.com/in/may-chyi-wong/" target="_blank"><span class="iconify" data-icon="brandico:linkedin-rect" style="color: #fff;"></span></a>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 mb-5 mb-md-0">
+          <a href="#" class="founder__link"  data-target="harly">
+            <div class="teamBox mx-auto position-relative text-center">
+              <img src="./images/12.png" alt="" />
+              <div class="fs30 mt-4 team-member-title">Harly</div>
+              <div class="linked">
+                <a href="https://www.linkedin.com/in/blockchain-crypto-lawyer-melbourne-australia/" target="_blank"><span class="iconify" data-icon="brandico:linkedin-rect" style="color: #fff;"></span></a>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 mb-5 mb-md-0">
+          <a href="#" class="founder__link"  data-target="ralph">
+            <div class="teamBox mx-auto position-relative text-center">
+              <img src="./images/9.png" alt="" />
+              <div class="fs30 mt-4 team-member-title">Ralph</div>
+              <div class="linked">
+                <a href="https://www.linkedin.com/in/ralphkalsi/" target="_blank"><span class="iconify" data-icon="brandico:linkedin-rect" style="color: #fff;"></span></a>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="row founder__info__cnt">
+        <div class="col">
+          <div class="founder__info" id="may">
+            <div class="founder__info__inner">
+              <div class="founder__info__head">
+                <h2>May</h2>
+                <div class="seprator"></div>
+              </div>
+              <div class="founder__info_body">
+                <p>May Wong is the Founder and Mastermind behind Gachyi Land. She formulates the concepts and designs throughout the Gachyi Land ecosystem, including NFTs, Gacha-Launchpad, and games. </p>
+                <p>Outside of Gachyi Land, May survives on games, animes, and chai latte. She is also a lawyer within the corporate commercial and immigration space. </p>
+              </div>
+            </div>
+          </div>
+          <div class="founder__info" id="harly">
+            <div class="founder__info__inner">
+              <div class="founder__info__head">
+                <h2>Harly Zappino</h2>
+                <div class="seprator"></div>
+              </div>
+              <div class="founder__info_body">
+                <p>Harly Zappino is the Founder, Legal and Economist of Gachyi Land. He is a leader in the field of cryptocurrency and blockchain legal advisory. He has a proven track record of successful ecosystems and sustainable models for his clients’ crypto projects. He has also developed numerous NFT models ensuring gamification that is beneficial to NFT holders and the issuers.</p>
+              </div>
+            </div>
+          </div>
+          <div class="founder__info" id="ralph">
+            <div class="founder__info__inner">
+              <div class="founder__info__head">
+                <h2>Ralph Kalsi</h2>
+                <div class="seprator"></div>
+              </div>
+              <div class="founder__info_body">
+                <p>Ralph Kalsi is the Founder, Tech and Marketing Advisor of Gachyi Land. He has developed a broad range of NFT projects and other blockchain related tech projects including centralised exchanges, dex, NFT marketplaces and many more.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-md-5 mt-4 mt-mb-4">
+        <div class="col text-center">
+          <h3 class="team-type-title">Partners</h3>
+        </div>
+      </div>
+
+      <div class="owl-carousel owl-theme roadMapSlider">
+        <div class="item">
+          <div class="partern__box">
+            <a href="#" class="partner__link" data-target="neo">
+              <img src="./images/neo-legal-partner.png" class="img-fluid mx-auto" />
+            </a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="partern__box">
+            <a href="#" class="partner__link" data-target="blockchain">
+              <img src="./images/blockchain-a.png" class="img-fluid mx-auto" />
+            </a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="partern__box">
+            <a href="#" class="partner__link" data-target="xentrix">
+              <img src="./images/XentrixLogo.png" class="img-fluid mx-auto" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row partner__info__cnt mt-4 mt-md-5">
+        <div class="col">
+          <div class="founder__info" id="neo">
+            <div class="founder__info__inner">
+              <div class="founder__info_body">
+                <p>Neo Legal is an Australian law firm deeply immersed in blockchain and cryptocurrency. They have acted as an advisor to a broad range of blockchain companies and projects, including Australian crypto exchanges, NFT as well as DeFi projects. The firm also facilitates services crucial to blockchain/crypto projects such as Tokenomics and Gamification.</p>
+              </div>
+            </div>
+          </div>
+          <div class="founder__info" id="blockchain">
+            <div class="founder__info__inner">
+              <div class="founder__info_body">
+                <p>Blockchain Australia is the leading blockchain development and consulting company in Australia. They offer end-to-end solution to help transform emerging tech ideas into a fully functional reality. Many global and local blockchain/crypto projects have been brought to life under their wings.</p>
+              </div>
+            </div>
+          </div>
+          <div class="founder__info" id="xentrix">
+            <div class="founder__info__inner">
+              <div class="founder__info_body">
+                <p>Xentrix Studios is a powerhouse in the animation industry that has worked with industry giants such as Warner Bros, Disney, Marvel, Lego to name a few. This marks Xentrix Studios Australia, a subsidiary of Xentrix Studios entrance into the NFT space in which Xentrix will be developing animation assets for Gachyi Land and their affiliated partners.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="title fs64 text-white  text-center text-nowrap mt-4 mt-md-0 mt-lg-5"><span class="px-4">SOCIALS</span>
+      </div>
+      <div class="social news upper-socials d-flex align-items-center justify-content-center py-md-5 py-3">
+        <a href="https://twitter.com/GachyiLand" target="_blank" class="btn btn-link p-0 discord-icon">
+          <span class="iconify" data-icon="akar-icons:twitter-fill" style="color: #9b84fc;"></span>
+        </a>
+        <a href="https://www.instagram.com/gachyi.land/" target="_blank" class="btn btn-link p-0 discord-icon">
+          <span class="iconify" data-icon="akar-icons:instagram-fill" style="color: #9b84fc;"></span>
+        </a>
+        <a href="https://www.facebook.com/Gachyi-Land-275279670982071" target="_blank" class="btn btn-link p-0 discord-icon">
+          <span style="color: #9b84fc;" class="iconify" data-icon="brandico:facebook"></span>
+        </a>
+        <a href="https://discord.gg/pPWAC888kC" target="_blank" class="btn btn-link p-0 discord-icon">
+          <span class="iconify" data-icon="fa-brands:discord" style="color: #9b84fc;"></span>
+        </a>
+        <a href="https://t.me/GachyiLand" target="_blank" class="btn btn-link p-0 discord-icon">
+          <span class="iconify" data-icon="cib:telegram-plane" style="color: #9b84fc;"></span>
+        </a>
+      </div>
+      <div class="row" id="instafeed">
+        <div class="col-md-4 mb-4">
+          <div class="usersocialcard">
+            <div class="usersocialcard__header">
+              <a href="https://www.instagram.com/p/CWXBXmEJt7q/?utm_medium=copy_link" target="_blank">
+                <div class="usersocialcard__header__left">
+                  <img src="./images/social_thumb.jpg" />
+                  <div class="username">
+                    <h4>Gachyi Land</h4>
+                    <h6>@GachyiLand</h6>
+                  </div>
+                </div>
+                <div class="usersocialcard__header__right">
+                  <span class="iconify" data-icon="mdi:instagram" data-width="25" data-height="25" data-color="#1c1c1c"></span>
+                </div>
+              </a>
+            </div>
+            <div class="usersocialcard__body">
+              <div class="usersocialcard__body__content">
+                <!-- It's giveaway time! 🤩
+                Two winners will be selected 🚀
+                Want to win, check details below to enter:
+                ‼️Rules‼️
+                * Follow Us
+                * Like this post
+                * Share this post on your story
+                * Comment & Tag 3 Friends
+                Winners will be selected in 72 hours.
+                Good Luck Gachyilanders ❤️
+                #nft #nftart #polygonNFT #gachyiland #googoo #NFTGaming #NFTGiveaways #NFTGiveaway #giveawaycontest #NFTCommunity #PlayToEarnGame #gamenft -->
+
+                
+                gachyi.land
+                Check out Soral's recent yt vid featuring Gachyi Land! 😁
+              </div>
+              <div class="usersocialcard__body__asset">
+                <!-- <a href="https://www.instagram.com/p/CVaVyuksna1/?utm_source=ig_web_copy_link">
+                  <img src="./images/Post_1.jpg" />
+                </a> -->
+
+                <a href="https://www.instagram.com/p/CWXBXmEJt7q/?utm_medium=copy_link" target="_blank">
+                  <img src="./images/instagram-link-1.jpg" />
+                </a>
+              </div>
+            </div>
+          </div><!-- usercard box-->
+        </div><!-- usercard container -->
+        <div class="col-md-4 mb-4">
+          <div class="usersocialcard">
+            <div class="usersocialcard__header">
+              <a href="https://www.instagram.com/p/CWXES5JJjiQ/?utm_medium=copy_link" target="_blank">
+                <div class="usersocialcard__header__left">
+                  <img src="./images/social_thumb.jpg" />
+                  <div class="username">
+                    <h4>Gachyi Land</h4>
+                    <h6>@GachyiLand</h6>
+                  </div>
+                </div>
+                <div class="usersocialcard__header__right">
+                  <span class="iconify" data-icon="mdi:instagram" data-width="25" data-height="25" data-color="#1c1c1c"></span>
+                </div>
+              </a>
+            </div>
+            <div class="usersocialcard__body">
+              <div class="usersocialcard__body__content">
+                <!-- 🎁 We are giving away $500 to winners of Gachyi Land fan art contest!
+                🎖To win, simply follow our Instagram & join our Discord to read the rules to enter
+                💬 https://discord.gg/epVr2JbB5B
+                🕒 Starts UTC 12am 22 Oct ; Ends UTC 12am 13 Nov
+                🌸 We are building an NFT Launchpad & P2E MMORPG NFT Game
+                ❤️ Tag your talented friends so they don't miss out! -->
+
+                Congratulations to our winners :
+                🥇@5151_63
+                🥈@mokyuun
+                🥉@pez.hr
+                🎖️@maia.en
+                🎖️@arts.of.win
+                🏅Abid Shah
+              </div>
+              <div class="usersocialcard__body__asset">
+                <!-- <a href="https://www.instagram.com/p/CVUrLdsJcI4/?utm_source=ig_web_copy_link">
+                  <img src="./images/instagram-link-3.jpg" class="img-fluid"/>
+                </a> -->
+                <a href="https://www.instagram.com/p/CWXES5JJjiQ/?utm_medium=copy_link" target="_blank">
+                  <img src="./images/instagram-link-3.jpg" class="img-fluid"/>
+                </a>
+              </div>
+            </div>
+          </div><!-- usercard box-->
+        </div><!-- usercard container -->
+        <div class="col-md-4 mb-4">
+          <div class="usersocialcard">
+            <div class="usersocialcard__header">
+              <a href="https://www.instagram.com/p/CWKpbtLJXWW/?utm_medium=copy_link" target="_blank">
+                <div class="usersocialcard__header__left">
+                  <img src="./images/social_thumb.jpg" />
+                  <div class="username">
+                    <h4>Gachyi Land</h4>
+                    <h6>@GachyiLand</h6>
+                  </div>
+                </div>
+                <div class="usersocialcard__header__right">
+                  <span class="iconify" data-icon="mdi:instagram" data-width="25" data-height="25" data-color="#1c1c1c"></span>
+                </div>
+              </a>
+            </div>
+            <div class="usersocialcard__body">
+              <div class="usersocialcard__body__content">
+                <!-- GooGoo Morning Gachyilanders 💗
+                Good things are coming your way 😱
+                #nftgame #polygonnft #nftcommunity #nftcollectibles #blockchaingame #play2earn #gachyiland #googoo -->
+
+                🎁 NFT COLLAB GIVEAWAY 🎁
+
+                @marvelousnfts @gachyi.land
+
+                Prize Pool:
+                👑 2x Bad Days NFT credit + 2x Goo Goo Pre-sale spot
+
+                💥 2 winners in total: 1 winner will be selected from each discord
+
+                🐲 START: 12 NOV, UTC 3AM
+                🐲 END: 14 NOV, UTC 3AM
+              </div>
+              <div class="usersocialcard__body__asset">
+                <!-- <a href="https://www.instagram.com/p/CVJbgr1h-Kh/?utm_source=ig_web_copy_link">
+                  <img src="./images/Post_3.jpg" />
+                </a> -->
+                <a href="https://www.instagram.com/p/CWKpbtLJXWW/?utm_medium=copy_link" target="_blank">
+                  <img src="./images/instagram-link-2.jpg" />
+                </a>
+              </div>
+            </div>
+          </div><!-- usercard box-->
+        </div><!-- usercard container -->
+      </div>
+      <div class="paper mt-3 mt-md-5">
+        <div class="fs64 fw-700 text-shadow text-white text-center text-md-start">Get to know us better!</div>
+        <a href="https://docsend.com/view/zmitfz49fyhtgamr" target="_blank" class="btn btn-link p-0 paperbtn"><img src="./images/read-w-btn.png" width="100%"
+            alt="" /></a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container-fluid">
+      <div class="row align-items-center pb-3 pb-xl-5">
+        <div class="col-md-3">
+          <a class="navbar-brand" href="#home"><img src="./images/logo.png" alt="" /></a>
+        </div>
+        <div class="col-md-6">
+          <ul class="navbar-nav justify-content-center flex-wrap flex-row">
+            <li class="nav-item">
+              <a class="nav-link active" href="#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="launchpad.html">NFT Launchpad</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact-us.html/#faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact-us.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <div class="social d-flex align-items-center justify-content-center justify-content-md-end">
+            <a href="https://twitter.com/GachyiLand" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span class="iconify" data-icon="akar-icons:twitter-fill" style="color: #9b84fc;"></span>
+            </a>
+            <a href="https://www.instagram.com/gachyi.land/" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span class="iconify" data-icon="akar-icons:instagram-fill" style="color: #9b84fc;"></span>
+            </a>
+            <a href="https://www.facebook.com/Gachyi-Land-275279670982071" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span style="color: #9b84fc;" class="iconify" data-icon="brandico:facebook"></span>
+            </a>
+            <a href="https://discord.gg/pPWAC888kC" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span class="iconify" data-icon="fa-brands:discord" style="color: #9b84fc;"></span>
+            </a>
+            <a href="https://t.me/GachyiLand" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span class="iconify" data-icon="cib:telegram-plane" style="color: #9b84fc;"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-md-5">
+          <div class="text-white fs24 mb-3">Copyright &copy; Gachyi Land.</div>
+          <a class="footer-link" target="_blank" href="http://www.polygon.technology">Powered by Polygon</a>
+        </div>
+        <div class="col-md-7">
+          <div class="footerLink">
+            <a href="#">Terms and Condition</a>
+            <a href="#">Privacy Policy</a>
+            <select class="language">
+              <option>English</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Js Link -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/owl.carousel.min.js"></script>
+  <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+  <script src="./js/select2.min.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="/js/jquery.matchHeight-min.js"></script>
+  <script src="./js/instafeed.min.js"></script>
+  <script type="text/javascript">
+    var feed = new Instafeed({
+      accessToken: 'IGQVJWeE9tejV1VHJoaVM4cG1HQjFjZAU1ua05ZAdV9iT2dsM1lLYWlxVWdKWExhYWF2TldIQnFoQ1FvVFUzZA1Q4UUtxSE5acWxVY2hxbnVXN0ZA2T0w4QldfSl9BTkNidG0yY2hnZAzVJSE5zVXVNYW5ZAbwZDZD',
+      limit: 3,
+      template: '<div class="col-md-4 mb-4"><div class="usersocialcard"><div class="usersocialcard__header"><a href="https://www.instagram.com/p/CVAtxiTpchG/" target="_blank"><div class="usersocialcard__header__left"><img src="./images/social_thumb.jpg" /><div class="username"><h4>Gachyi Land</h4><h6>@GachyiLand</h6></div></div><div class="usersocialcard__header__right"><span class="iconify" data-icon="mdi:instagram" data-width="25" data-height="25" data-color="#1c1c1c"></span></div></a></div><div class="usersocialcard__body"><div class="usersocialcard__body__content">{{model.caption}}</div><div class="usersocialcard__body__asset"><a href="{{model.permalink}}"><img src="{{image}}" /></a></div></div></div></div>'
+    });
+    feed.run();
+
+    $(function() {
+      $('.usersocialcard').matchHeight();
+    });
+
+  </script>
+  <script src="./js/audio.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.1.4/ethers.umd.min.js"></script>			
+  <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+  <script src="js/connection.js"></script>
+  <script type="text/javascript">
+    toastr.options = {
+      "closeButton": false,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": false,
+      "positionClass": "toast-top-right",
+      "preventDuplicates": false,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+  </script>
+  
+</body>
+</html>

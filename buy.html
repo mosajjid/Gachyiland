@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, minimum-scale=1">
+  <title>Gachyi Land</title>
+  <link rel="icon" href="./images/favicon.ico">
+  <!-- css Link -->                                                       
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css " rel="stylesheet">
+  <link rel="stylesheet" href="./css/owl.carousel.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./sass/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+</head>
+
+<body class="buy_goo_goo_body" style="overflow-y: scroll;">
+
+  <div class="transactionLoader" style="display: none;" id="transactionLoader">
+    <img src="./images/Rolling-1s-1s-200px.gif" class="img-fluid mx-auto" />
+  </div>
+
+  <div id="snackbar"></div>
+  
+  <button type="button" class="btn btn-link p-0 fixedrightBottom d-none"><img src="./images/capsulenow.svg" class="w-100"
+      alt=""></button>
+
+
+      <!-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid d-flex justify-content-between">
+          <a class="navbar-brand" href="index.html"><img src="./images/logo.png" alt="" /></a>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="#about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html#team">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/launchpad.html">NFT Launchpad</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact-us.html#faq">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact-us.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <button class="btn btn-primary d-none d-md-inline-block" id="connectWallet" type="button">Connect</button>
+            <button class="btn btn-link d-inline-block d-md-none p-0" id="connectWalletMob"  type="submit"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="30" height="30" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" transform="translate(3 4)"><path d="M.5 2.5h12a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2zm1-2h9a1 1 0 0 1 1 1v1H.5v-1a1 1 0 0 1 1-1z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11.5" cy="7.5" fill="white" r="1"/></g></svg></button>
+          </div>
+        </div>
+      </nav> -->
+
+
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid d-flex justify-content-between">
+          <!-- Button trigger modal -->
+          <button type="button" class="hamburger__menu" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img src="./images/hamburger.png" class="img-fluid" alt="">
+          </button>
+          <a class="navbar-brand" href="/index.html"><img src="./images/logo.png" alt="" /></a>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="/index.html#about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html#team">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/launchpad.html">NFT Launchpad</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-2 px-1" href="/buy.html">Buy NFT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact-us.html#faq">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact-us.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <button class="btn btn-primary d-none d-md-inline-block" id="connectWallet" type="button">Connect</button>
+            <button class="btn btn-link d-inline-block d-md-none p-0" id="connectWalletMob"  type="button">
+              <img src="./images/wallet.png" class="img-fluid" height="60px" width="60px" alt="">
+            </button>
+    
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <img src="./images/logo.png" class="img-fluid" alt="">
+                  </div>
+                  <div class="modal-body">
+                    <ul class="navbar-nav">
+                      <li class="nav-item-modal">
+                        <a class="nav-link active" href="/index.html#about">About Us</a>
+                      </li>
+                      <img src="./images/line-seperator.png" class="img-fluid" alt="">
+                      <li class="nav-item-modal">
+                        <a class="nav-link-modal" href="#team">Team</a>
+                      </li>
+                      <img src="./images/line-seperator.png" class="img-fluid" alt="">
+                      <li class="nav-item-modal">
+                        <a class="nav-link-modal" href="/launchpad.html">NFT Launchpad</a>
+                      </li>
+                      <img src="./images/line-seperator.png" class="img-fluid" alt="">
+                      <!-- <li class="nav-item-modal">
+                        <a class="nav-link-modal mx-2 px-1" href="/buy.html">Buy NFT</a>
+                      </li> -->
+                      <li class="nav-item-modal">
+                        <a class="nav-link-modal" href="/contact-us.html#faq">FAQ</a>
+                      </li>
+                      <img src="./images/line-seperator.png" class="img-fluid" alt="">
+                      <li class="nav-item-modal">
+                        <a class="nav-link-modal" href="/contact-us.html">Contact Us</a>
+                      </li>
+                      <img src="./images/line-seperator.png" class="img-fluid" alt="">
+                    </ul>
+                  </div>
+                  <button type="button" class="btn-modal-close" data-bs-dismiss="modal" aria-label="Close">
+                    <img src="./images/Modal-close.png" class="img-fluid" alt="">
+                  </button>
+                  <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div> -->
+    
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+  <section class="goo-goo-header">
+      <div class="row">
+        <div class="col-6 first-col"><img src="./images/Buy-now-top-bar-img.png" class="img-fluid top-img" alt=""></div>
+
+        <div class="col-6 second-col">
+          <button><img src="./images/buy-goo-share.png" class="img-fluid" alt=""></button>
+          <div class="floating-button-2">
+            <button onclick="musikBuy()" class="audio off"><img src="./images/buy-goo-music.png" class="" alt=""></button>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="overlay" id="just"></section>
+
+  <section id="timer-section" class="d-none">
+    <div class="section">
+      <h2>Until Public-sale Starts</h2>
+      <button onclick="closeIt()" ><span class="iconify" data-icon="entypo:cross" style="color: #ff70a3;"></span></button>
+      <div id="timer"></div>
+    </div>
+  </section>
+
+  <section class="buy-goo-goo pb-3">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-4 top-one d-block d-md-none d-lg-block">
+                  <div class="first-col">
+                    <!-- <img src="./images/buy-goo-creater-banner.png" class="img-fluid" alt=""> -->
+                    <div class="creator-text-pic">
+                      <img src="./images/buy-now-creator-text-pic.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="creator-container">
+                      
+                      <div class="first">
+
+                          <div class="creator-pic"><img src="./images/5.png" class="img-fluid p-2" alt=""></div>
+
+                          <div class="creator-content">
+                            <h1>May</h1>
+                            <div class="image">
+                              <img src="./images/buy-goo-creator-line.png" class="img-fluid" alt="">
+                            </div>
+
+                            <p>Lawyer by day</p>
+
+                            <p class="last-para">Gachyi Mama by night</p>
+                          </div>
+
+                      </div>
+
+                      <div class="second mt-3">
+                        <div class="creator-social">
+                          <button><a href="https://twitter.com/GachyiLand" target="_blank"><img src="./images/buy-page-new-twitter-button.png" class="" alt=""></a></button>
+
+                          <button> <a href="https://discord.gg/officialgachyiland" target="_blank"><img src="./images/buy-page-new-discord-button.png" class="" alt=""></a></button>
+                        </div>
+
+                        <div class="creator-like">
+                          <button onclick="like()" ><img src="./images/buy-now-social-icon-2.png" class="" alt=""></button>
+                          <p id="likes"></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+              </div>
+
+              <div class="col-lg-4 ">
+                <div class="second-col mt-3 mb-3">
+                  <div class="new">
+                    <img src="./images/buy-goo-goo-only-cat-new.png" class="img-fluid cat-img" alt="">
+                  <div class="buy-nft-container">
+                    
+                    <div class="first-button-row">
+                      <div>
+                        <div class="first-button">
+                          <p><span id="nftQ"></span> = <span id="maticA">0.01</span>MATIC</p>
+                        </div>
+                      </div>
+
+                      <div class="last-buy-button">
+                        <button class="last-button" id="buybtn">
+                          <img src="./images/buy-nft-first-row-button-press-to-buy.png" class="img-fluid" alt="">
+                        </button>
+                        <img src="./images/buy-now-cat-press-to-buy.png" class="img-fluid buy-now-img" alt="">
+                        <input type="hidden" id="amountofTokens" value="1" />
+                      </div>
+                    </div>
+
+                    <div class="buy-pocket d-flex">
+                      <div class="left-buy">
+                        <div class="second-button-row">
+                          <button onclick="timesOne()" class="btn-1x"><img src="./images/buy-goo-1x.png" alt=""></button>
+                        </div>
+                        
+    
+                        <div class="third-button-row">
+                          <button onclick="timesTwo()" class="btn-2x"><img src="./images/buy-goo-2x.png" alt=""></button>
+                        </div>
+    
+                        <div class="forth-button-row">
+                            <button onclick="timesThree()" class="btn-3x"><img src="./images/buy-goo-3x.png" alt=""></button>
+                        </div>
+                      </div>
+  
+                      <div class="right-buy">
+                        <img src="./images/buy-now-poket-new.png" alt="">
+                      </div>
+                    </div>
+
+                  </div>
+                  </div>
+                  <!-- <img src="./images/buy-goo-goo-cat.png" class="img-fluid" alt=""> -->
+                  
+                </div>
+                  
+              </div>
+
+              <div class="col-md-6 last-one d-none d-md-block d-lg-none">
+                <div class="first-col">
+                  <div class="creator-text-pic">
+                    <img src="./images/buy-now-creator-text-pic.png" class="img-fluid" alt="">
+                  </div>
+                  <div class="creator-container">
+                    
+                    <div class="first">
+
+                        <div class="creator-pic"><img src="./images/5.png" class="img-fluid" alt=""></div>
+
+                        <div class="creator-content">
+                          <h1>May</h1>
+                          <div class="image">
+                            <img src="./images/buy-goo-creator-line.png" class="img-fluid" alt="">
+                          </div>
+
+                          <p>Lawyer by day</p>
+
+                          <p class="last-para">Gachyi Mama by night</p>
+                        </div>
+
+                    </div>
+
+                    <div class="second mt-3">
+                      <div class="creator-social">
+                        <button><a href="https://twitter.com/GachyiLand" target="_blank"><img src="./images/buy-page-new-twitter-button.png" class="" alt=""></a></button>
+
+                        <button><a href="https://discord.gg/officialgachyiland" target="_blank"><img src="./images/buy-page-new-discord-button.png" class="" alt=""></a></button>
+                      </div>
+
+                      <div class="creator-like">
+                        <button><img src="./images/buy-now-social-icon-2.png" class="" alt=""></button>
+                        
+
+                        <p>15,000</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+
+              <div class="col-md-6 col-lg-4 mt-0 mt-md-5 mt-lg-0">
+                <div class="buy-matic-container">
+                  <div class="third-col">
+                    <!-- <img src="./images/buy-goo-buy-matic.png" alt="" class="img-fluid"> -->
+                    <div class="buy-matic">
+                      <button class="btn-matic" id="buyMatics"><img src="./images/buy-goo-buy-matic.png" class="img-fluid" alt=""></button>
+                      <h3>Buy Matic</h3>
+                    </div>
+  
+                    <div class="buy-matic mt-2">
+                      <button class="btn-matic"><img src="./images/buy-goo-buy-total.png" class="img-fluid" alt=""></button>
+                      <h3>Total : <span id="total-matic" class="ms-2"></span></h3>
+                    </div>
+  
+                    <div class="buy-matic mt-2">
+                      <button class="btn-matic"><img src="./images/buy-goo-left.png" class="img-fluid" alt=""></button>
+                      <h3><span id="nftBought"></span> / 500 Minted</h3>
+                    </div>
+                  </div>
+                  
+                </div>
+
+                <!-- <div class="matic_marsh_img">
+                  <img src="./images/buy-matic-goo-goo-marshmallow.png" class="img-fluid" alt="">
+                </div> -->
+                  
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="goo-goo-scrol">
+      
+    <div class="container-fluid">
+
+        <div class="scroll">
+            <div class="owl-carousel owl-theme roadMapSlider-buy-now pt-5 pb-5">
+
+                <div class="item">
+                  <img src="./images/buy-page-slider-1.png" alt="" class="img-fluid">
+                </div>
+    
+                <div class="item">
+                  <img src="./images/buy-page-slider-2.png" alt="" class="img-fluid">
+                </div>
+    
+    
+                <div class="item">
+                  <img src="./images/buy-page-slider-3-small-size.png" alt="" class="img-fluid">
+                </div>
+    
+                
+                <div class="item">
+                  <img src="./images/buy-page-slider-4.png" alt="" class="img-fluid">
+                </div>
+    
+                <div class="item">
+                  <img src="./images/buy-page-slider-5.png" alt="" class="img-fluid">
+                </div>
+    
+                <!-- <div class="item">
+                    <img src="./images/buy-now-goo-goo-scroll.png" alt="" class="img-fluid">
+                </div> -->
+                
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col">
+                
+            </div>
+        </div> -->
+
+  </section>
+
+
+  <footer>
+    <div class="container-fluid">
+      <div class="row align-items-center pb-3 pb-xl-5">
+        <div class="col-md-3">
+          <a class="navbar-brand" href="#home"><img src="./images/logo.png" alt="" /></a>
+        </div>
+        <div class="col-md-6">
+          <ul class="navbar-nav justify-content-center flex-wrap flex-row">
+            <li class="nav-item">
+              <a class="nav-link active" href="#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="launchpad.html">NFT Launchpad</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact-us.html/#faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact-us.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <div class="social d-flex align-items-center justify-content-center justify-content-md-end">
+            <a href="https://twitter.com/GachyiLand" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span class="iconify" data-icon="akar-icons:twitter-fill" style="color: #9b84fc;"></span>
+            </a>
+            <a href="https://www.instagram.com/gachyi.land/" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span class="iconify" data-icon="akar-icons:instagram-fill" style="color: #9b84fc;"></span>
+            </a>
+            <a href="https://www.facebook.com/Gachyi-Land-275279670982071" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span style="color: #9b84fc;" class="iconify" data-icon="brandico:facebook"></span>
+            </a>
+            <a href="https://discord.gg/pPWAC888kC" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span class="iconify" data-icon="fa-brands:discord" style="color: #9b84fc;"></span>
+            </a>
+            <a href="https://t.me/GachyiLand" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span class="iconify" data-icon="cib:telegram-plane" style="color: #9b84fc;"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-md-5">
+          <div class="text-white fs24 mb-3">Copyright &copy; Gachyi Land.</div>
+          <a class="footer-link" target="_blank" href="http://www.polygon.technology">Powered by Polygon</a>
+        </div>
+        <div class="col-md-7">
+          <div class="footerLink">
+            <a href="#">Terms and Condition</a>
+            <a href="#">Privacy Policy</a>
+            <select class="language">
+              <option>English</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- <footer class="mt-5">
+    <div class="container-fluid">
+      <div class="row align-items-center pb-3 pb-xl-5">
+        <div class="col-md-3">
+          <a class="navbar-brand" href="index.html"><img src="./images/logo.png" alt="" /></a>
+        </div>
+        <div class="col-md-6">
+          <ul class="navbar-nav justify-content-center flex-wrap flex-row">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">NFT Launchpad</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <div class="social d-flex align-items-center justify-content-center justify-content-md-end">
+            <a href="https://twitter.com/GachyiLand" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span class="iconify" data-icon="akar-icons:twitter-fill" style="color: #9b84fc;"></span>
+            </a>
+            <a href="https://www.instagram.com/gachyi.land/" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span class="iconify" data-icon="akar-icons:instagram-fill" style="color: #9b84fc;"></span>
+            </a>
+            <a href="https://www.facebook.com/Gachyi-Land-275279670982071" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span style="color: #9b84fc;" class="iconify" data-icon="brandico:facebook"></span>
+            </a>
+            <a href="https://discord.gg/pPWAC888kC" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span class="iconify" data-icon="fa-brands:discord" style="color: #9b84fc;"></span>
+            </a>
+            <a href="https://t.me/GachyiLand" target="_blank" class="btn btn-link p-0 discord-icon-f">
+              <span class="iconify" data-icon="cib:telegram-plane" style="color: #9b84fc;"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-md-5">
+          <div class="text-white fs24">Copyright &copy; Gachyi Land.</div>
+        </div>
+        <div class="col-md-7">
+          <div class="footerLink">
+            <a href="#">Terms and Condition</a>
+            <a href="#">Privacy Policy</a>
+            <select class="language">
+              <option>English</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer> -->
+  <!-- Js Link -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/owl.carousel.min.js"></script>
+  <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="/js/jquery.matchHeight-min.js"></script>
+  <script src="./js/instafeed.min.js"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="./js/audio.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.1.4/ethers.umd.min.js"></script>			
+  <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+  <script src="js/connection.js"></script>
+  <script type="text/javascript">
+    toastr.options = {
+      "closeButton": false,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": false,
+      "positionClass": "toast-top-right",
+      "preventDuplicates": false,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+  </script>
+  <script src="js/buy.js?version=1.1"></script>
+
+  
+
+</body>
+
+</html>

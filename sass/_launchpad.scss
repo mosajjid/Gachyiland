@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@300;400;500;600;700&family=Righteous&display=swap');
+
+@function strip-unit($value) {
+@return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+$u1: unit($min-vw);
+$u2: unit($max-vw);
+$u3: unit($min-font-size);
+$u4: unit($max-font-size);
+
+@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+    font-size: $min-font-size;
+    @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+    }
+    @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+    }
+    }
+}
+}
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+$max_font: 24px;
+
+$righteous: 'Righteous', sans-serif;
+$redrose: 'Red Rose', sans-serif;
+
+*{
+    transition: all .3s;
+}
+
+.launchpad_body{
+   background-image: url(../images/Launch_pad_bg.png) !important;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.welcome_to_gatchiland{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    transition: all .3s ;
+    img{
+        padding: 0 2rem;
+        max-width: 588px;
+        min-width: 388px;
+    }
+
+    @media screen and (min-width: 767px){
+        margin-top: 10rem;
+    }
+}
+
+.goo-video{
+    overflow-y: hidden;
+    position: relative;
+
+    padding-bottom: 4rem;
+
+    .work_with_us{
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // position: absolute;
+        // right: 0;
+        // bottom: 0;
+        // z-index: 8;
+        img{
+            max-width: 287px;
+        }
+
+        @media screen and (min-width: 1366px){
+            display: block;
+            position: absolute;
+            right: 15px;
+            bottom: 0;
+            z-index: 8;
+        }
+    }
+
+    .owl-dots {
+        position: absolute;
+        bottom: -50px;
+        z-index: 1;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        
+        .video-here{
+            background: #5F4AB3;
+            border: 5px solid #FFFFFF;
+            box-sizing: border-box;
+            box-shadow: 0px 13px 27px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+
+            position: relative;
+    
+            width: 100%;
+            height: 100%;
+            max-width: 1013px;
+            max-height: 459px;
+
+            @media screen and (min-width: 1366px){
+                width: 60%;
+            }
+
+            overflow: hidden;
+
+            .cont-video {
+                overflow:hidden;
+                padding-bottom:45.25%;
+                position:relative;
+                height:0;
+
+                iframe {
+                    left:0;
+                    top:0;
+                    height:100%;
+                    width:100%;
+                    position:absolute;
+                }
+            }
+            
+            
+    
+            text-align: center;
+
+            &::before{
+                position: absolute;
+                content: '';
+                left: 0%;
+                top: 0%;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.25);
+            }
+            .playerHandle{
+                .playbtn
+                {
+                    display: none;
+                }
+                .pausebtn{
+                    display: inline;
+                }
+                &.paused{
+                    .playbtn
+                    {
+                        display: inline;
+                    }
+                    .pausebtn{
+                        display: none;
+                    }
+                }
+            }
+
+            button{
+                color: #fff;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                
+                &.playvideo{
+                    display: none;
+                }
+                
+                svg{
+                    font-size: 5rem;
+                }
+            }
+
+            #pause{
+                // display: none;
+                color: #fff;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                &.pausevideo{
+                    display: none;
+                }
+                
+                svg{
+                    font-size: 5rem;
+                }
+            }
+        }
+    }
+}
+
+.launchpad{
+    margin-top: 3rem;
+    .title{
+        overflow-y: hidden;
+        &.wt{
+            &::before,&::after{
+                width: 30%;
+            }
+        }
+        &::before,&::after{
+            max-width: 600px;
+        }
+        span{
+            flex: 1;
+            // font-family: $righteous; 
+        }   
+    }
+
+    .active_porals{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url(../images/Launch_pad_potals.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        
+        // width: 100%;
+        .active_potal_img{
+
+            .upper_img{
+                display: flex;
+                align-items: center;
+                margin-left: auto;
+                margin-right: auto;
+    
+            }
+    
+            .main-pic{
+                display: flex;
+                align-self: center;
+                justify-self: center;
+                margin-left: auto;
+                margin-right: auto;
+    
+            }
+        }        
+    }
+
+    .coming_active_porals{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url(../images/Launch_pad_potals-coming-soon.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        
+        
+        .active_potal_img{
+
+            .upper_img{
+                display: flex;
+                align-items: center;
+                margin-left: auto;
+                margin-right: auto;
+    
+            }
+    
+            .main-pic{
+                display: flex;
+                align-self: center;
+                justify-self: center;
+                margin-left: auto;
+                margin-right: auto;
+    
+            }
+        }
+    }
+}
+
+footer{
+    background: #7764CC;
+}
