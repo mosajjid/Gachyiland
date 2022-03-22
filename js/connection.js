@@ -96,11 +96,15 @@ if(!window.localStorage.getItem("sWalletAddress"))
     //web3Connection();
     document.getElementById("connectWallet").innerText = "Connect";
     document.getElementById("connectWallet").setAttribute('onclick',  'web3Connection();');
+    
+    document.getElementById("connectWalletMob").setAttribute('onclick',  'web3Connection();');
 }
 else
 {
     document.getElementById("connectWallet").innerText = "Connected: ..."+window.localStorage.getItem("sWalletAddress").slice(-5);
     document.getElementById("connectWallet").setAttribute('onclick',  'Logout();');
+    document.getElementById("connectWalletMob").setAttribute('onclick',  'Logout();');
+    
 }
 console.log(window.localStorage.getItem("sWalletAddress"));
 
