@@ -1,0 +1,27 @@
+{
+  "name": "ak45 NFT",
+  "id":95,
+  "description": "this is Aristocrat skin",
+  "image": "https://valomerge.s3.amazonaws.com/images/95.png",
+  "edition": 2,
+  "date": 1653886872763,
+  "attributes": [
+    {
+      "trait_type": "skin",
+      "value": "stock",
+      "isImage": 1
+    },
+    {
+      "trait_type": "Strength",
+      "max_value": 100,
+      "value": 89,
+      "isImage": 0
+    },
+    {
+      "trait_type": "stability",
+      "max_value": 100,
+      "value": 49,
+      "isImage": 0
+    }
+  ]
+}
