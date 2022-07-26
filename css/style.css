@@ -82,9 +82,9 @@ body {
 }
 .navbar-nav .nav-link {
     color: #fff !important;
-    font-size: 20px;
-    line-height: 29px;
-    margin: 0 20px;
+    font-size: 18px;
+    line-height: 27px;
+    margin: 0 7px;
     opacity: 1;
 }
 .navbar-nav .nav-link:hover {
@@ -407,7 +407,7 @@ button:focus,
     .navbar-nav .nav-link {
         font-size: 16px;
         line-height: 19px;
-        margin: 0 10px;
+        margin: 0 7px;
     }
     .fs64 {
         font-size: 44px;
@@ -505,6 +505,11 @@ button:focus,
         padding: 25px 35px;
     }
 }
+@media screen and (max-width: 1366px) {
+    .navbar-brand img {
+        max-width: 150px;
+    }
+}
 @media screen and (max-width: 1199px) {
     .fs30.Righteous.text-white.deg90 {
         transform: unset;
@@ -556,6 +561,9 @@ button:focus,
     }
     .navbar-brand img {
         max-width: 150px;
+    }
+    .navbar-nav .nav-link {
+        margin: 0 0px;
     }
 }
 @media screen and (max-width: 991px) {

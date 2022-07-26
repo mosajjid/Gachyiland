@@ -113,20 +113,26 @@ nav .navbar-nav .nav-item .nav-link {
   margin: 0 20px;
   opacity: 1;
 }
+@media screen and (max-width: 1530px) {
+  nav .navbar-nav .nav-item .nav-link {
+    font-size: 16px;
+    line-height: 19px;
+    margin: 0 7px;
+    opacity: 1;
+  }
+}
 @media screen and (min-width: 992px) and (max-width: 1200px) {
   nav #connectWallet {
     width: 115px;
+  }
+  nav .custom_nav_ul {
+    justify-content: center;
   }
   nav .navbar-brand img {
     width: 170px;
   }
   nav .navbar-nav {
     min-width: 639px;
-  }
-  nav .navbar-nav .nav-item {
-    width: 100%;
-    display: flex;
-    justify-content: center;
   }
 }
 
@@ -1738,7 +1744,7 @@ nav .navbar-nav .nav-item .nav-link {
   height: 60px;
   width: 60px;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1066px) {
   .hamburger__menu {
     display: none;
   }
@@ -2292,4 +2298,25 @@ nav .modal .navbar-nav {
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
    supported by Chrome, Edge, Opera and Firefox */
+}
+
+@media screen and (max-width: 1440px) {
+  nav .navbar-nav .nav-item .nav-link {
+    font-size: 16px;
+    line-height: 19px;
+    margin: 0 7px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  nav .navbar-nav .nav-item .nav-link {
+    margin: 0 0px;
+  }
+}
+@media screen and (max-width: 1066px) {
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: column !important;
+  }
+  .navbar-expand-lg .navbar-collapse {
+    display: none !important;
+  }
 }/*# sourceMappingURL=main.css.map */

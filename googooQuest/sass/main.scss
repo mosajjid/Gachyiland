@@ -126,6 +126,13 @@ nav{
                 line-height: 29px;
                 margin: 0 20px;
                 opacity: 1;
+                @media screen and (max-width: 1530px) {
+                    font-size: 16px;
+                    line-height: 19px;
+                    margin: 0 7px;
+                    opacity: 1;
+                    
+                }
             }
         }
     }
@@ -135,6 +142,9 @@ nav{
             width: 115px;
         }
 
+        .custom_nav_ul{
+            justify-content: center;
+        }
         .navbar-brand{
             img{
                 width: 170px;
@@ -143,11 +153,11 @@ nav{
     
         .navbar-nav{
             min-width: 639px;
-            .nav-item{
-                width: 100%;
-                display: flex;
-                justify-content: center;
-            }
+            // .nav-item{
+            //     width: 100%;
+            //     display: flex;
+            //     justify-content: center;
+            // }
         }
     }
 }
@@ -2185,7 +2195,7 @@ nav{
         width: 60px;
     }
 
-    @media screen and (min-width: 992px){
+    @media screen and (min-width: 1066px){
         display: none;
     }
     
@@ -2802,3 +2812,25 @@ nav{
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
   }
+
+
+@media screen and (max-width: 1440px) {
+    nav .navbar-nav .nav-item .nav-link {
+        font-size: 16px;
+        line-height: 19px;
+        margin: 0 7px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    nav .navbar-nav .nav-item .nav-link {
+        margin: 0 0px;
+    }
+}
+@media screen and (max-width: 1066px){
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: column !important;
+    }
+    .navbar-expand-lg .navbar-collapse {
+        display: none!important;
+    }
+}

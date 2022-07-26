@@ -535,6 +535,14 @@ audio{
     align-items: center;
     justify-content: center;
 }
+@media screen and (max-width: 1066px){
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: column !important;
+    }
+    .navbar-expand-lg .navbar-collapse {
+        display: none!important;
+    }
+}
 
 .hamburger__menu{
     background: transparent;
@@ -550,7 +558,7 @@ audio{
         width: 60px;
     }
 
-    @media screen and (min-width: 992px){
+    @media screen and (min-width: 1066px){
         display: none;
     }
 }
