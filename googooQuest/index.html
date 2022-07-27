@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, minimum-scale=1">
+  <title>Gachyi Land</title>
+  <!-- <link rel="icon" href="./images/favicon.ico"> -->
+  <!-- css Link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/owl.carousel.css">
+  <!-- <link rel="stylesheet" href="./css/style.css"> -->
+  <link rel="stylesheet" href="./sass/main.css">
+  <link rel="stylesheet" href="css/select2.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"> -->
+  <link rel="stylesheet" href="./css/slick.css">
+  <link rel="stylesheet" href="./css/slick-theme.css">
+  <script src="https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.7.1/dist/umd/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+</head>
+
+<body>
+  <section class="Pop__up">
+    <div class="modal fade" id="pop2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabe">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div> -->
+          <div class="modal-body">
+            <!-- <img src="./Overlay.png" class="img-fluid" alt=""> -->
+            
+            <!-- <div class="container"> -->
+              
+              <div class="pop__container">
+
+                <div class="content">
+
+                  <h6 class="heading" id="progressStatus"></h6>
+
+                  <div class="loading__bar" id="bar-div">
+                    <img src="./assets/Images/pop__inner__bar.png" class="img-fluid" id="progressbar" alt="">
+                  </div>
+
+                  <button class="btn-modal-close cancel__btn d-none noselect" data-bs-dismiss="modal" aria-label="Close" id="toggle-btn" ></button> 
+
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="Pop__up">
+    <div class="modal fade" id="withdraw_reward_pop" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabe">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div> -->
+          <div class="modal-body">
+            <!-- <img src="./Overlay.png" class="img-fluid" alt=""> -->
+            
+            <!-- <div class="container"> -->
+              
+              <div class="pop__container">
+
+                <div class="content">
+
+                  <p class="first__parra" id="nftIDWithdraw"></p>
+
+                  <h6 class="heading" >Withdraw</h6>
+
+                  <p class="second__parra " id="rewardPara">you may withdraw your rewards every 30 days</p>
+                  <!-- <p class="second__parra d-none" id="withdrawNFTPara">Withdraw your rewards first before withdrawing NFT </p> -->
+                  <input type="hidden" id="WithdrawRewardNFTID" value="" >
+
+                  <div class="polimer__bg">
+                    <h5>Polymer Earned</h5>
+
+                    <div class="bar">
+                      <h5 id="nftReward"></h5>
+                    </div>
+                    
+
+                  </div>
+                  <div class="loading__bar" >
+                    <img src="./assets/Images/pop__inner__bar.png" class="img-fluid" id="progressbar2" alt="">
+                  </div>
+
+                  <button class="submit__btn noselect" id="callWithdrawReward" onclick = "withdrawRewardFunctionCall()" >Submit</button>
+
+                </div>
+
+              </div>
+              
+            <!-- </div> -->
+          </div>
+
+            <!-- <button type="button" class="btn-modal-close" data-bs-dismiss="modal" aria-label="Close">
+              <img src="./assets/Images/Modal-close.png" class="img-fluid" alt="">
+            </button> -->
+
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="loader_wrapper d-none" id="loader">
+    <div class="loader">Loading...</div>
+  </div>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar__id">
+        <div class="container-fluid d-flex justify-content-between">
+          <!-- Button trigger modal -->
+          <button type="button" class="hamburger__menu" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img src="./assets/Images/hamburger.png" class="img-fluid" alt="">
+          </button>
+          <a class="navbar-brand" href="../index.html"><img src="./assets/Images/logo.png" alt="" /></a>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+            <ul class="navbar-nav custom_nav_ul">
+              <li class="nav-item">
+                <a class="nav-link active" href="../index.html#about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html#team">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../launchpad.html">NFT Launchpad</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Googoo Quest</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link mx-2 px-1" href="/buy.html">Buy NFT</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="../contact-us.html#faq">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../contact-us.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <a class="btn btn-primary d-none d-md-inline-block " onclick="" disabled id="connectWallet" type="button"></a>
+            <p id='userWallet' class=' text-lg text-gray-600 my-2'></p>
+            <button class="btn btn-link d-inline-block d-md-none p-0" disabled id="connectWalletMob"  type="button">
+              <img src="./assets/Images/wallet.png" class="img-fluid" id="mobConnectIndicator"  height="60px" width="60px" alt="">
+            </button>
+    
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <img src="./assets/Images/website__logo__navbar__logo.png" class="img-fluid" alt="">
+                  </div>
+                  <div class="modal-body">
+                    <ul class="navbar-nav">
+                      <li class="nav-item-modal">
+                        <a class="nav-link-modal active" href="../index.html#about">About Us</a>
+                      </li>
+                      <img src="./assets/Images/line-seperator.png" class="img-fluid" alt="">
+                      <li class="nav-item-modal">
+                        <a class="nav-link-modal" href="../index.html#team">Team</a>
+                      </li>
+                      <img src="./assets/Images/line-seperator.png" class="img-fluid" alt="">
+                      <li class="nav-item-modal">
+                        <a class="nav-link-modal" href="../launchpad.html">NFT Launchpad</a>
+                      </li>
+                      <img src="./assets/Images/line-seperator.png" class="img-fluid" alt="">
+                      <li class="nav-item-modal">
+                        <a class="nav-link-modal" href="#">Googoo Quest</a>
+                      </li>
+                      <img src="./assets/Images/line-seperator.png" class="img-fluid" alt="">
+                      <!-- <li class="nav-item-modal">
+                        <a class="nav-link-modal mx-2 px-1" href="/buy.html">Buy NFT</a>
+                      </li> -->
+                      <li class="nav-item-modal">
+                        <a class="nav-link-modal" href="../contact-us.html#faq">FAQ</a>
+                      </li>
+                      <img src="./assets/Images/line-seperator.png" class="img-fluid" alt="">
+                      <li class="nav-item-modal">
+                        <a class="nav-link-modal" href="../contact-us.html">Contact Us</a>
+                      </li>
+                      <img src="./assets/Images/line-seperator.png" class="img-fluid" alt="">
+                    </ul>
+                  </div>
+                  <button type="button" class="btn-modal-close" data-bs-dismiss="modal" aria-label="Close">
+                    <img src="./assets/Images/Modal-close.png" class="img-fluid" alt="">
+                  </button>
+                  <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div> -->
+    
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </nav>
+
+    <section class="hero__section " id="connect">
+     
+        <div class="container">
+          
+          
+            <div class="hero__logo">
+                <img src="./assets/Images/brand__new__Goo__Goo__quest__logo.png" class="img-fluid" alt="">
+                <div id="loading"></div>
+                <!-- <h2>Goo</h2> -->
+            </div>
+
+            <div class="hero__btn mt-2">
+                <div class="left">
+                    <button class="left__btn noselect" id="sectionConnectWallet" disabled onclick="document.getElementById('connectWallet').click()">Connect Wallet</button>
+                </div>
+
+                <div class="right">
+                    <button class="right__btn noselect" data-bs-toggle="modal" data-bs-target="#exampleModal__1">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="hero__section d-none" id="begin">
+        <div class="container" >
+            <div class="hero__logo">
+                <img src="./assets/Images/brand__new__Goo__Goo__quest__logo.png" class="img-fluid" alt="">
+                <!-- <h2>Goo</h2> -->
+            </div>
+
+            <div class="hero__btn mt-2">
+                <div class="left">
+                    <button class="left__btn noselect" onclick="beginJourny()">Begin Journey</button>
+                </div>
+
+                <div class="right">
+                    <button class="right__btn noselect" onclick="viewProgress()">View Progress</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="choose__a__goo" id="choose__goo">
+        <div class="container">
+            <div class="goo__goo__slider">
+                <div class="goo__card">
+
+                </div>
+
+            </div>
+        </div>
+    </section> -->
+
+    <section class="capsules_sec d-none" id="choose__goo">
+        <div class="container">
+          <!-- <div class="title fs64 text-white text-uppercase text-center"><span class="px-4">Launchpad</span></div> -->
+          <div class="slider__logo__margin d-flex justify-content-center">
+            <img src="./assets/Images/brand__new__Goo__Goo__quest__logo.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="slider__logo d-flex justify-content-center">
+            <img src="./assets/Images/Goo_Goo__chosse_to_send.png" class="img-fluid" alt="">
+          </div>
+
+          <div class=" owl-carousel owl-theme capsulesSlider mt-0 mt-md-4 " id="capsulesSlider">
+
+                  
+            
+          </div>
+
+          <div class="slider__btn mt-2">
+            <div class="left">
+                <button class="left__btn noselect" onclick="duration__back()"><img src="./assets/Images/brand__new__back__btn.png" class="img-fluid" alt=""></button>
+            </div>
+
+            <div class="right">
+                <button class="right__btn noselect" disabled onclick="duration()" ><img src="./assets/Images/brand__new__next__btn.png" class="img-fluid greyScale" id="nxt_btn" alt="" ></button>
+            </div>
+          </div>
+
+        </div>
+    </section>
+    
+    <section class="capsules_sec single__card d-none" id="no__goo">
+      <div class="container">
+        <!-- <div class="title fs64 text-white text-uppercase text-center"><span class="px-4">Launchpad</span></div> -->
+        <div class="slider__logo d-flex justify-content-center">
+          <img src="./assets/Images/GOOGOO__logo.png" class="img-fluid" alt="">
+        </div>
+
+        <div class="slider__logo d-flex justify-content-center">
+          <img src="./assets/Images/Goo_Goo__chosse_to_send.png" class="img-fluid" alt="">
+        </div>
+
+          <div class="item">
+            <div class="goo__card">
+              <img src="./assets/Images/Goo__card_image_4.png" class="card__profile__image" alt="">
+              
+              <div class="name__plate">
+                  <p>GOO GOO</p>
+                  <h6>Empty</h6>
+              </div>
+
+              <div class="buy__goo_goo">
+                <a href="https://opensea.io/collection/goo-goos" target="_blank">
+                  <img src="./assets/Images/Card__Buy__goo_goo.png" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+
+        <div class="slider__line d-flex justify-content-center ">
+          <img src="./assets/Images/you__don't__have__any_goo_goo__now.png" class="img-fluid" alt="">
+        </div>
+
+        <div class="slider__btn mt-2">
+          <div class="left">
+              <button class="left__btn noselect" onclick="duration__back()"><img src="./assets/Images/slider__back.png" class="img-fluid" alt=""></button>
+          </div>
+
+          <div class="right">
+              <button class="right__btn noselect"><img src="./assets/Images/slioder__next__sisabled.png" class="img-fluid" alt=""></button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="capsules_sec__duration d-none" id="cap__duration">
+      <div class="container">
+        <!-- <div class="title fs64 text-white text-uppercase text-center"><span class="px-4">Launchpad</span></div> -->
+        <div class="slider__logo__margin d-flex justify-content-center">
+          <img src="./assets/Images/brand__Choose_your_quest_duration.png" class="img-fluid" alt="">
+        </div>
+
+        <!-- <div class="slider__logo d-flex justify-content-center">
+          <h2>Choose your quest duration</h2>
+        </div> -->
+
+        <div class="owl-carousel owl-theme capsulesSlider__duration mt-0 mt-md-4" id="capsulesSlider__duration">
+
+          
+
+        </div>
+
+        <div class="slider__btn mt-2">
+
+          <div class="left">
+              <button class="left__btn noselect" onclick="last__back()" ><img src="./assets/Images/slider__back.png" class="img-fluid" alt=""></button>
+          </div>
+
+          <!-- <div class="plan__formed">
+            <div class="content">
+              <h2>$PLMR FARMED</h2>
+              <div class="price">
+                <div class="left__price">
+                  <p>1,955</p>
+                </div>
+
+                <div class="right__price">
+                  <p>10%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="exploring">
+            <div class="content">
+              <h2>EXPLORING</h2>
+
+              <div class="time__duration">
+                <div class="month">
+                  <span>23</span>
+                </div>
+
+                <div class="days">
+                  <span>30</span>
+                </div>
+
+                <div class="hours">
+                  <span>12</span>
+                </div>
+
+                <div class="minutes">
+                  <span>00</span>
+                </div>
+
+              </div>
+            </div>
+          </div> -->
+
+          <div class="right">
+              <button class="right__btn noselect " disabled  onclick=" last()"><img src="./assets/Images/button__submit.png" class="img-fluid greyScale" id="sub_btn"  alt=""></button>
+          </div>
+        </div>
+
+        <div class="navigation__button">
+          <div class="left__new">
+            <button class="left__btn noselect" onclick="last__back()"><img src="./assets/Images/slider__back.png" class="img-fluid" alt=""></button>
+          </div>
+
+          <div class="right__new">
+            <button class="right__btn noselect" disabled  onclick=" last(),function(event){
+              event.preventDefault()
+            }"><img src="./assets/Images/Slider__next.png" class="img-fluid greyScale" id="sub_btn_2" alt=""></button>
+        </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="progress__island d-none" id="progress">
+      <div class="container-fluid">
+
+        
+        <div class="slider__logo__duration d-flex justify-content-center" id="quest__duration">
+          <!-- <img src="./assets/Images/GOOGOO__logo.png" class="img-fluid" alt=""> -->
+        </div>
+
+        <div class="slider__logo d-flex justify-content-center">
+          <!-- <h2>Goo Goos currently in a quest</h2> -->
+          <a href="#" class="back__link" onclick="lastToFirst()"><img src="./assets/Images/new__back__btn.png" class="img-fluid" alt=""></a>
+          <img src="./assets/Images/View__more__goo__goo__currently__on.png" class="img-fluid quest__img" alt="">
+
+          <img src="./assets/video/Gifs.gif" id="gifToggle" style="display: none;" class="img-fluid gif__image" alt="">
+          <img src="./assets/Images/stacking__page__bg.png" id="imageToggle" style="display: block;" class="img-fluid gif__image" alt="">
+
+          <!-- <video loop autoplay>
+            <source src="./assets/video/Goo Goo Quest_D8_8.webm" type="video/webm">
+          </video> -->
+
+        </div>
+
+        <div class="row mt-5 progress__slider">
+          <!-- <div class="col-lg-8 last__banner">
+            <div class="progress__island__Panel text-center">
+              <h2>Progress Island <br> Here</h2>
+            </div>
+            <div class="left-last">
+              <button class="left__btn noselect" onclick="lastToFirst()"><img src="./assets/Images/slider__back.png" class="img-fluid" alt=""></button>
+          </div>
+            
+          </div> -->
+          
+
+          <!-- <div class="col-lg-12 d-flex justify-content-center align-items-center"> -->
+            <div class="vertical owl-carousel owl-theme owl-loaded" id="lastPageStaked">  
+              
+            </div>
+          <!-- </div> -->
+
+          <div class="back__btn">
+            <a href="#" class="back__link" onclick="lastToFirst()"><img src="./assets/Images/new__back__btn.png" class="img-fluid" alt=""></a>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      Launch static backdrop modal
+    </button> -->
+
+    <!-- Modal -->
+    <section class="view__more">
+      <div class="modal fade" id="exampleModal__1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabe">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div> -->
+            <div class="modal-body">
+              <!-- <img src="./Overlay.png" class="img-fluid" alt=""> -->
+              
+              <div class="container">
+                
+                <div class="logo d-flex align-items-center justify-content-center">
+                  <img src="./assets/Images/GOOGOO__logo.png" class="img-fluid" alt="">
+                </div>
+
+                <div class="row mt-2 mb-2">
+
+                  <div class="col-md-6">
+                    <div class="scrooler__content">
+
+                      <h2>Welcome to Goo Goo Quest!</h2>
+
+                      <h3>You can now dispatch your Goo Goos on a quest (staking) to farm slime polymers ($PLMR) as staking rewards.</h3>
+
+                      <h3>Goo Goo on a quest is locked and cannot be returned or withdrawn until the quest has ended. </h3>
+                    
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 mt-3 mt-md-0">
+                    <div class="scrooler__content">
+                      <h3>You should choose carefully how long to stake your Goo Goos for.</h3>
+
+                      <h3>The longer you stake your Goo Goos, the higher the staking rewards!</h3>
+
+                      <h3>
+                        Below is a list of staking period options that you can stake your Goo Goos for. View staking rewards <a target="_blank" class="rewardInfo" href="https://docsend.com/view/j6ncpybkn7j56g2v">here</a>.</h3>
+                      </div>
+                  </div>
+
+                </div>
+
+                <div class="splice__count">
+                  <img src="./assets/Images/View___MOre__staking__period.png" class="img-fluid" alt="">
+                </div>
+
+                <div class="owl-carousel owl-theme splice__slider mt-0 mt-md-4">
+
+                  <div class="item">
+
+                    <div class="goo__card">
+                      <div class="pink">
+                        <h2>3</h2>
+                        <h3>Months</h3>
+                      </div>
+                    </div>
+                            
+                  </div>
+
+                  <div class="item">
+
+                    <div class="goo__card">
+                      <div class="pink">
+                        <h2>6</h2>
+                        <h3>Months</h3>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="item">
+
+                    <div class="goo__card">
+                      <div class="pink">
+                        <h2>9</h2>
+                        <h3>Months</h3>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="item">
+
+                    <div class="goo__card">
+                      <div class="pink">
+                        <h2>12</h2>
+                        <h3>Months</h3>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="item">
+
+                    <div class="goo__card">
+                      <div class="pink">
+                        <h2>24</h2>
+                        <h3>Months</h3>
+                      </div>
+                    </div>
+
+                  </div>
+        
+                </div>
+
+                <!-- <div class="splice__cost d-flex justify-content-end">
+                  <img src="./assets/Images/Splice__cost.png" class="img-fluid" alt="">
+                </div> -->
+
+              </div>
+            </div>
+
+            <button type="button" class="btn-modal-close" data-bs-dismiss="modal" aria-label="Close">
+              <img src="./assets/Images/Modal-close.png" class="img-fluid" alt="">
+            </button>
+
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<!-- Js Link -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"  referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js" integrity="sha512-6ORWJX/LrnSjBzwefdNUyLCMTIsGoNP6NftMy2UAm1JBm6PRZCO1d7OHBStWpVFZLO+RerTvqX/Z9mBFfCJZ4A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+
+<script src="./js/owl.carousel.min.js"></script>
+<script src="./js/select2.min.js"></script>
+<script src="./js/script.js"></script>
+<script src="./js/slick.min.js"></script>
+<script src="./js/design.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+<script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
+<script src="./js/index.js"></script> 
+</body>
+</html>
