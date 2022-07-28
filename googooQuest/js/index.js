@@ -5,7 +5,7 @@ var gachyilandFarm;
 var gachyilandNFTSend;
 var gachyilandFarmSend;
 var user;
-var categorylength = 5;
+var categorylength = 6;
 var categoryURI = [];
 var tokenURI = [];
 var stakedTokensURI = [];
@@ -637,7 +637,7 @@ async function approveTXN(){
   try {
     return await gachyilandNFTSend.methods.approve(gachyilandFarmAddress, nftID).send({ from: user,gasPrice: 90000000000,gasLimit: 9000000 }, function (err, txn) {
       if (err) {
-        document.getElementById("progressStatus").innerText = 'Txn not completed';
+        document.getElementById("progressStatus").innerText = 'txn not completed';
         document.getElementById("toggle-btn").classList.remove('d-none');
         document.getElementById("bar-div").classList.add('d-none');
         document.getElementById("toggle-btn").innerText = 'okay';
@@ -666,7 +666,7 @@ async function nftStaking(){
     console.log(nftID, categID,user);
     let stake_result = await gachyilandFarmSend.methods.stake(nftID, categID).send({ from: user,gasPrice: 90000000000,gasLimit: 9000000 },async function (err, txn) {
         if (err) {
-          document.getElementById("progressStatus").innerText = 'Txn not completed';
+          document.getElementById("progressStatus").innerText = 'txn not completed';
           document.getElementById("toggle-btn").classList.remove('d-none');
           document.getElementById("bar-div").classList.add('d-none');
           document.getElementById("toggle-btn").innerText = 'okay';
@@ -904,19 +904,19 @@ async function withdrawRewardFunctionCall() {
   $('#pop2').modal({ backdrop: 'static', keyboard: false });
   $("#pop2").modal('toggle');
   document.getElementById('toggle-btn').classList.add('d-none');
-  document.getElementById("progressStatus").innerText = 'In Progress';
+  document.getElementById("progressStatus").innerText = 'in progress';
   document.getElementById("progressbar").style.width = "1%"
   document.getElementById("bar-div").classList.remove('d-none');
   try {
     await gachyilandFarmSend.methods.harvest(document.getElementById('WithdrawRewardNFTID').value, categID).send({ from: user,gasPrice: 90000000000,gasLimit: 9000000 }, function (err, result) {
       if (err) {
-        document.getElementById("progressStatus").innerText = 'Txn not completed';
+        document.getElementById("progressStatus").innerText = 'txn not completed';
         document.getElementById("toggle-btn").classList.remove('d-none');
         document.getElementById("bar-div").classList.add('d-none');
         document.getElementById("toggle-btn").innerText = 'okay';
       } else {
         console.log("rewards withdrawn" + result);
-        document.getElementById("progressStatus").innerText = 'Half way through';
+        document.getElementById("progressStatus").innerText = 'half way through';
         document.getElementById("progressbar").style.width = "40%"
       }
     })
@@ -945,7 +945,7 @@ async function withdrawNFT(nftID) {
   document.getElementById("toggle-btn").classList.add('d-none');
   document.getElementById("progressbar").style.width = "1%"
   document.getElementById("bar-div").classList.remove('d-none');
-  document.getElementById("progressStatus").innerText = 'In Progress';
+  document.getElementById("progressStatus").innerText = 'in progress';
   for (let i = 0; i < categorylength && flag==true; i++) {
     try {
       withdrawstats = await gachyilandFarmSend.methods.withdraw(nftID, i).estimateGas({ from: user, gasPrice: 200000000000 }, async function (e, result) {
@@ -968,11 +968,11 @@ async function withdrawNFT(nftID) {
           isRewardPending = await gachyilandFarm.methods.getAmountToHarvest(user, i, nftID).call({},async function (err, result) {
             if (result==0) {
               console.log("category id ______________________________________________>", nftID, i);
-              document.getElementById("progressStatus").innerText = 'Approve txn';
+              document.getElementById("progressStatus").innerText = 'approve txn';
               document.getElementById("progressbar").style.width = "33%"
               let withdrawTxn = await gachyilandFarmSend.methods.withdraw(nftID, i).send({ from: user,gasPrice: 90000000000,gasLimit: 9000000 }, function (err, result) {
                     if (err) {
-                        document.getElementById("progressStatus").innerText = 'Txn not completed';
+                        document.getElementById("progressStatus").innerText = 'txn not completed';
                         document.getElementById("toggle-btn").classList.remove('d-none');
                         document.getElementById("bar-div").classList.add('d-none');
                         document.getElementById("toggle-btn").innerText = 'okay';
